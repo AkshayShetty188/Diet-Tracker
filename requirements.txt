@@ -10,3 +10,4 @@ Jinja2==3.1.2              # Templating engine used by Flask
 Flask-Bootstrap==3.3.7.1   # Bootstrap integration with Flask
 Flask-Mail==0.9.1          # For email notifications
 Flask-Login==0.6.2         # For user authentication and session management
+Werkzeug==2.2.3
