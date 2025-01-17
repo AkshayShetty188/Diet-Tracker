@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ meal_name }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/animate.css">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <div class="card shadow-lg p-4 animate__animated animate__fadeInUp">
+            <h1 class="text-center">{{ meal_name }}</h1>
+            <div class="mt-4">
+                <h4>Nutrition Information:</h4>
+                <p><strong>Protein:</strong> {{ nutrition['Protein'] }}g</p>
+                <p><strong>Carbs:</strong> {{ nutrition['Carbs'] }}g</p>
+            </div>
+            <div class="mt-4">
+                <h4>Recipe:</h4>
+                <p>{{ recipe }}</p>
+            </div>
+            <!-- Form for logging the meal -->
+            <form method="POST" id="meal-form" class="mt-4 animate__animated animate__fadeIn">
+                <label>Did you consume this meal?</label>
+                <button type="submit" name="taken" value="yes" class="btn btn-success mt-2" id="yes-btn">Yes</button>
+                <button type="submit" name="taken" value="no" class="btn btn-danger mt-2">No</button>
+            </form>
+            <!-- Confirmation message -->
+            <div id="confirmation" class="mt-4 animate__animated animate__fadeIn d-none">
+                <p class="text-success">Meal logged successfully!</p>
+            </div>
+            <a href="/dashboard" class="btn btn-secondary mt-3">Back to Dashboard</a>
+        </div>
+    </div>
+    <!-- JavaScript for animation and confirmation -->
+    <script>
+        document.getElementById("yes-btn").addEventListener("click", (e) => {
+            e.preventDefault(); // Prevent form submission
+            document.getElementById("confirmation").classList.remove("d-none"); // Show confirmation
+            document.getElementById("meal-form").classList.add("d-none"); // Hide the form
+        });
+    </script>
+</body>
+</html>
