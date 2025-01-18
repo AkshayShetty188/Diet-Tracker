@@ -13,5 +13,4 @@ Flask-Login
 Werkzeug
 python-dotenv
 flask_sqlalchemy
-json
 datetime
