@@ -1,0 +1,13 @@
+Flask==2.2.3               # Core Flask framework for web applications
+Flask-SQLAlchemy==2.5.1    # Integration of Flask with SQLAlchemy ORM
+Flask-WTF==1.0.1           # For form handling and validation in Flask
+gunicorn==20.1.0           # WSGI server for running your Flask app in production
+python-dotenv==0.21.0      # For loading environment variables from a `.env` file
+pandas==1.5.3              # For handling and analyzing data
+plotly==5.13.1             # For creating interactive visualizations
+numpy==1.24.2              # For numerical computations, used with pandas
+Jinja2==3.1.2              # Templating engine used by Flask
+Flask-Bootstrap==3.3.7.1   # Bootstrap integration with Flask
+Flask-Mail==0.9.1          # For email notifications
+Flask-Login==0.6.2         # For user authentication and session management
+Werkzeug==2.2.3
