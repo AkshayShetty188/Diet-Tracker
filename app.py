@@ -5,14 +5,18 @@ import plotly
 import plotly.graph_objs as go
 import json
 from datetime import date
+from dotenv import load_dotenv
+load_dotenv()  # Loads environment variables from .env
+
 
 # Initialize Flask app
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # Configure database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Akshay18@root.mysql.pythonanywhere-services.com/diet_tracker'
-
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Akshay18@root.mysql.pythonanywhere-services.com/diet_tracker'
+import os
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 db = SQLAlchemy(app)
 
 # Database models
